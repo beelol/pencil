@@ -8,8 +8,10 @@ RSpec.describe Durable do
     before { durable_object.set_durability test_durability }
 
     describe "#set_durability" do
-        it "sets the respective durability" do
-            expect(durable_object.durability).to eq test_durability
+        context 'when setting durability' do
+            it "stores the exact durability" do
+                expect(durable_object.durability).to eq test_durability
+            end
         end
     end
 
@@ -18,8 +20,10 @@ RSpec.describe Durable do
 
         before {durable_object.add_durability additional_durability}
 
-        it "adds the respective durability" do
-            expect(durable_object.durability).to eq test_durability + additional_durability
+        context 'when adding durability' do
+            it "stores the respective additional durability" do
+                expect(durable_object.durability).to eq test_durability + additional_durability
+            end
         end
     end
 
@@ -28,8 +32,10 @@ RSpec.describe Durable do
 
         before {durable_object.remove_durability durability_reduction}
 
-        it "removes the respective durability" do
-            expect(durable_object.durability).to eq test_durability - durability_reduction
+        context 'when removing durability' do
+            it "subtracts the respective durability reduction" do
+                expect(durable_object.durability).to eq test_durability - durability_reduction
+            end
         end
     end
 end
