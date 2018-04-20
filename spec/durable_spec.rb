@@ -28,7 +28,7 @@ RSpec.describe Durable do
 
         before {durable_object.remove_durability durability_reduction}
 
-        it "adds the respective durability" do
+        it "removes the respective durability" do
             expect(durable_object.durability).to eq test_durability - durability_reduction
         end
     end
