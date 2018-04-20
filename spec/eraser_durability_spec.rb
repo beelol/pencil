@@ -12,4 +12,16 @@ RSpec.describe Eraser do
             end
         end
     end
+
+    describe "#add_durability" do
+        let(:additional_durability) { 29 }
+
+        before { eraser.add_durability additional_durability }
+
+        context 'when adding durability' do
+            it "stores the respective additional durability" do
+                expect(eraser.durability).to eq test_durability + additional_durability
+            end
+        end
+    end
 end
