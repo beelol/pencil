@@ -24,4 +24,16 @@ RSpec.describe Eraser do
             end
         end
     end
+
+    describe "#remove_durability" do
+        let(:durability_reduction) { 18 }
+
+        before { eraser.remove_durability durability_reduction }
+
+        context 'when removing durability' do
+            it "subtracts the respective durability reduction" do
+                expect(eraser.durability).to eq test_durability - durability_reduction
+            end
+        end
+    end
 end

@@ -10,6 +10,6 @@ module Durable
     end
 
     def remove_durability(amount)
-        @durability -= amount
+        @durability = [@durability - amount, 0].max
     end
 end
