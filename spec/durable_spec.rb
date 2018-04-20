@@ -18,7 +18,7 @@ RSpec.describe Durable do
     describe "#add_durability" do
         let(:additional_durability) {50}
 
-        before {durable_object.add_durability additional_durability}
+        before { durable_object.add_durability additional_durability }
 
         context 'when adding durability' do
             it "stores the respective additional durability" do
@@ -30,7 +30,7 @@ RSpec.describe Durable do
     describe "#remove_durability" do
         let(:durability_reduction) {48}
 
-        before {durable_object.remove_durability durability_reduction}
+        before { durable_object.remove_durability durability_reduction }
 
         context 'when removing durability' do
             it "subtracts the respective durability reduction" do
