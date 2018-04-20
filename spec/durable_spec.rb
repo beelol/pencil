@@ -16,7 +16,7 @@ RSpec.describe Durable do
     end
 
     describe "#add_durability" do
-        let(:additional_durability) {50}
+        let(:additional_durability) { 50 }
 
         before { durable_object.add_durability additional_durability }
 
@@ -28,7 +28,7 @@ RSpec.describe Durable do
     end
 
     describe "#remove_durability" do
-        let(:durability_reduction) {48}
+        let(:durability_reduction) { 48 }
 
         before { durable_object.remove_durability durability_reduction }
 
