@@ -10,7 +10,7 @@ RSpec.describe Durable do
         before { durable_object.set_durability test_durability }
 
         it "sets the respective durability" do
-            expect { durable_object.durability.to eq test_durability }
+            expect(durable_object.durability).to eq test_durability
         end
     end
 end
