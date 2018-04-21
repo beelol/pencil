@@ -18,8 +18,8 @@ RSpec.describe StringIndexer do
     end
 
     describe '#rightmost_index_of_last_occurrence' do
-        context '' do
-            it '' do
+        context 'with a string of text and token' do
+            it 'finds the rightmost index of the last occurrence of the token in the text at its first item' do
                 rightmost_index = string_indexer.rightmost_index_of_last_occurrence(text, token)
 
                 expect(rightmost_index).to eq text.length - 11
