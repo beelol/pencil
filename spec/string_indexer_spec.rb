@@ -16,4 +16,15 @@ RSpec.describe StringIndexer do
             end
         end
     end
+
+    describe '#rightmost_index_of_last_occurrence' do
+        context '' do
+            it '' do
+                rightmost_index = string_indexer.rightmost_index_of_last_occurrence(text, token)
+
+                expect(rightmost_index).to eq text.length - 11
+                expect(text[rightmost_index..text.length-1]).to eq "e seashore."
+            end
+        end
+    end
 end
