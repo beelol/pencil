@@ -15,7 +15,7 @@ class Eraser
         right = rightmost_index_of_last_occurrence(page, token)
         left = leftmost_reachable_index_from_right(page, token, moves)
 
-        @durability -= token.length
+        remove_durability token.length
 
         page[left..right] = replacer * moves
     end
