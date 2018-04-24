@@ -10,11 +10,12 @@ class Eraser
     end
 
     def erase(page, token, replacer = ' ')
-        moves = [@durability, token.length].max
+        moves = [@durability-1, token.length-1].min
 
         right = rightmost_index_of_last_occurrence(page, token)
-
         left = leftmost_reachable_index_from_right(page, token, moves)
+
+        @durability -= token.length
 
         page[left..right] = replacer * moves
     end
