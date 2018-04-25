@@ -25,7 +25,7 @@ RSpec.describe Pencil do
         context 'when sharpening' do
             let (:durability_reduction) { 100 }
 
-            it 'adds durability to the graphite' do
+            it 'restores the graphite\'s durability' do
 
                 pencil.graphite.remove_durability durability_reduction
 
