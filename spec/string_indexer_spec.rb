@@ -25,6 +25,16 @@ RSpec.describe StringIndexer do
                 expect(rightmost_index).to eq text.length - 11
                 expect(text[rightmost_index..text.length-1]).to eq "e seashore."
             end
+
+            it 'stops from the left when it runs out of moves' do
+                last_occurrence_start_index = string_indexer.last_occurrence(text, token)
+
+                num_to_index = 4
+
+                rightmost_index = string_indexer.rightmost_index_of_last_occurrence(text, token, num_to_index - 1)
+
+                expect(rightmost_index).to eq last_occurrence_start_index + num_to_index - 1
+            end
         end
     end
 

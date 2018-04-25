@@ -3,8 +3,10 @@ module StringIndexer
         text.rindex(token)
     end
 
-    def rightmost_index_of_last_occurrence(text, token)
-        last_occurrence(text, token) + token.length - 1
+    def rightmost_index_of_last_occurrence(text, token, moves = nil)
+        right_offset = moves.nil? ? token.length - 1 : moves
+
+         last_occurrence(text, token) + right_offset
     end
 
     def leftmost_reachable_index_from_right(text, token, moves)
