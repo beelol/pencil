@@ -21,6 +21,10 @@ RSpec.describe DurabilityCostConfig do
             it 'gets newline cost' do
                 expect(config.durability_cost_of "\n").to eq 0
             end
+
+            it 'gets appropriate cost with all cases' do
+                expect(config.durability_cost_of_string "aBc ;\n ").to eq 5
+            end
         end
     end
 end
